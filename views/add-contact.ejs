@@ -1,0 +1,68 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-8">
+      <h2>Tambah Data Kontak</h2>
+
+      <% if (typeof errors != 'undefined') { %>
+      <div class="alert alert-danger" role="alert">
+        <ul>
+          <% errors.forEach(error => { %>
+          <li><%= error.msg %></li>
+          <% }) %>
+        </ul>
+      </div>
+      <% } %>
+      <form action="/contact" method="post">
+        <div class="mb-3">
+          <label for="nama" class="form-label">Nama</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nama"
+            placeholder="masukkan nama"
+            name="nama"
+            autocomplete="off"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="nohp" class="form-label">Nim</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nohp"
+            placeholder="ex. 9320..."
+            name="nim"
+            required
+            autocomplete="off"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="nohp" class="form-label">No. HP</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nohp"
+            placeholder="08..."
+            name="nohp"
+            required
+            autocomplete="off"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            required
+            placeholder="name@example.com"
+            autocomplete="off"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

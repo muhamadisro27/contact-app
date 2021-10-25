@@ -1,0 +1,47 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-8">
+      <h2>Daftar Kontak</h2>
+      <!-- Button trigger modal -->
+      <a href="/contact/post" class="btn btn-primary mt-3">
+        <i class="bi bi-file-earmark-plus"></i>
+        Tambah Data Kontak
+      </a>
+
+      <% if ( msg != "") { %>
+      <div class="alert alert-success mt-3" role="alert"><%= msg %></div>
+      <% } %>
+
+      <table class="table table-striped mt-3">
+        <thead class="text-center">
+          <tr>
+            <th>No.</th>
+            <th>Nama</th>
+            <th>No.Hp</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if (contacts.length === 0) { %>
+          <tr>
+            <td class="text-center" colspan="4">Data belum ada</td>
+          </tr>
+          <% } %> <% contacts.forEach((contact,index) => { %>
+          <tr>
+            <th><%= index + 1 %></th>
+            <td><%= contact.nama %></td>
+            <td><%= contact.nohp %></td>
+            <td class="text-center">
+              <a
+                href="/contact/<%= contact.nama %>"
+                class="btn btn-success badge"
+                ><i class="bi bi-info-circle"> </i>detail</a
+              >
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

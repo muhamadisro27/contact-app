@@ -1,0 +1,31 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-8">
+      <h2>Daftar Mahasiswa</h2>
+      <a href="/contact/post" class="btn btn-primary">Tambah Data</a>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nama</th>
+            <th scope="col">Nim</th>
+            <th scope="col" class="text-center">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% contacts.forEach((m,i) => { %>
+          <tr>
+            <th scope="row"><%= i + 1 %></th>
+            <td><%= m.nama %></td>
+            <td><%= m.nim %></td>
+            <td colspan="2" class="text-center">
+              <a href="#" class="btn btn-info text-white">edit</a>
+              <a href="#" class="btn btn-danger">hapus</a>
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
